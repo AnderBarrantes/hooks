@@ -50,33 +50,36 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1>CRUD con Hooks</h1>
-      <div className="flex-row">
-        <div className="flex-large">
-
-          {
-            editing ? (
-              <div>
-                <h2>Editar Usuario</h2>
-                <EditUserForm currentUser={currentUser} updateUser={updateUser}></EditUserForm>
-              </div>
-            ):(
-              <div>
-                <h2>Agregar Usuario</h2>
-                <AddUserForm AddUser={AddUser}></AddUserForm>
-              </div>
-            )
-          }
-        </div>
-        <div className="flex-large">
-          <h2>Listar Usuarios</h2>
-          <UserTable 
-            users={users} 
-            deleteUser={deleteUser}
-            editRow={editRow}
-            >
-          </UserTable>
+    <div>
+      <nav className="navbar navbar-expand navbar-light bg-light mb-3">
+        <h1>CRUD con Hooks</h1>
+      </nav>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col mb-2">
+            {
+              editing ? (
+                <div>
+                  <h2>Editar Usuario</h2>
+                  <EditUserForm currentUser={currentUser} updateUser={updateUser}></EditUserForm>
+                </div>
+              ):(
+                <div>
+                  <h2>Agregar Usuario</h2>
+                  <AddUserForm AddUser={AddUser}></AddUserForm>
+                </div>
+              )
+            }
+          </div>
+          <div className="col">
+            <h2>Listar Usuarios</h2>
+            <UserTable 
+              users={users} 
+              deleteUser={deleteUser}
+              editRow={editRow}
+              >
+            </UserTable>
+          </div>
         </div>
       </div>
     </div>

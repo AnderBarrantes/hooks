@@ -2,8 +2,8 @@ import React from 'react';
 
 const UserTable = (props) => {
 return (
-    <table>
-      <thead>
+    <table className="table table-hover">
+      <thead className="thead-dark">
         <tr>
           <th>Name</th>
           <th>Username</th>
@@ -17,18 +17,20 @@ return (
                     <td>{user.name}</td>
                     <td>{user.username}</td>
                     <td>
-                    <button 
-                        className="button muted-button"
-                        onClick = {() => {props.editRow(user)}}
-                    >
-                        Editar
-                    </button>
-                    <button 
-                        className="button muted-button"
-                        onClick = {() => {props.deleteUser(user.id)}}
-                    >
-                        Eliminar
-                    </button>
+                        <div className="btn-group btn-group-sm">
+                        <button 
+                            className="btn btn-warning btn-sm"
+                            onClick = {() => {props.editRow(user)}}
+                        >
+                            Editar
+                        </button>
+                        <button 
+                            className="btn btn-danger btn-sm"
+                            onClick = {() => {props.deleteUser(user.id)}}
+                        >
+                            Eliminar
+                        </button>
+                        </div>
                     </td>
                 </tr>
               ))

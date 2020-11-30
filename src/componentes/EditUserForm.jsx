@@ -20,25 +20,29 @@ const EditUserForm = (props) => {
 
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Name</label>
-            <input type="text" name="name" ref={
-                register({
-                    required: {value:true, message:"campo Requerido"}
-                })
-            }/>
-            <div>
-                {errors?.name?.message}
+            <div className="form-group">
+                <label>Name</label>
+                <input className="form-control" type="text" name="name" ref={
+                    register({
+                        required: {value:true, message:"Campo requerido"}
+                    })
+                }/>
+                <small className="form-text text-muted">
+                    {errors?.name?.message}
+                </small>
             </div>
-            <label>Username</label>
-            <input type="text" name="username" ref={
-                register({
-                    required: {value:true, message:"campo Requerido"}
-                })
-            }/>
-            <div>
-                {errors?.username?.message}
+            <div className="form-group">
+                <label>Username</label>
+                <input className="form-control" type="text" name="username" ref={
+                    register({
+                        required: {value:true, message:"Campo requerido"}
+                    })
+                }/>
+                <small className="form-text text-muted">
+                    {errors?.username?.message}
+                </small>
             </div>
-            <button>Editar Usuario</button>
+            <button className="btn btn-primary btn-sm">Actualizar Usuario</button>
         </form>
     );
 }
